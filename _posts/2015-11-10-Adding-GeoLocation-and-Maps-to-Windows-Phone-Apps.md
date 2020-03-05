@@ -6,23 +6,23 @@ The final project for this tutorial is on [GitHub](https://github.com/sitepoint-
 
 First we need to create an application to hold our map, do this by using the ***Ctrl+Shift+N*** keyboard shortcut or by selecting the ***File -> New -> Project…*** menu item Both ways will take you to the window below. On the left make sure you select ***Windows Phone***, then choose ***Blank App (Windows Phone)***. Give your app a name and click ***Ok***.
 
-![New Project](https://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2015/10/1445210705new.png)
+<span style="display:block;text-align:center">![New Project](/assets/images/2015-11-10/1445210705new.png)
 
 Opening ***MainPage.xaml*** you will notice a black blank `MainPage`. If you’d like to add a new default page title and app name, delete it and ***right-click*** on the project and select ***Add -> New Item…***
 
-![New Item](https://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2015/10/1445210670mainpage.png)
+<span style="display:block;text-align:center">![New Item](/assets/images/2015-11-10/1445210670mainpage.png)
 
 Choose ***Basic Page*** and name it ***MainPage***.
 
-![Basic Page](https://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2015/10/1445210676mainpage-01.png)
+<span style="display:block;text-align:center">![Basic Page](/assets/images/2015-11-10/1445210676mainpage-01.png)
 
 At the next prompt hit ***Yes***. It automatically adds the files needed to manage page navigation. These classes end up in a folder named ***Common***.
 
-![Common files](https://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2015/10/1445210680mainpage-02.png)
+<span style="display:block;text-align:center">![Common files](/assets/images/2015-11-10/1445210680mainpage-02.png)
 
 Now to add the map, just drag a ***MapControl*** from the ***Toolbox*** and drop it to ***LayoutRoot*** grid in the ***Document Outline***. You can also drop it inside the designer. The xaml code will automatically generate as you can see below.
 
-![Add MapControl](https://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2015/10/1445210691mapcontrol.gif)
+<span style="display:block;text-align:center">![Add MapControl](/assets/images/2015-11-10/1445210691mapcontrol.gif)
 
 If you wish to add the control yourself, add this line of code inside the tags of `ControlRoot` grid.
 
@@ -40,7 +40,7 @@ This is enough to create the control, but we will add a couple more properties.
 
 At this point you can run your app and it will compile with no errors, but when it launches you will see a message instead of a map stating Warning: MapServiceToken not specified. We solve this in the next step.
 
-![MapService error](https://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2015/10/1445210699mapservicetoken-error.png)
+<span style="display:block;text-align:center">![MapService error](/assets/images/2015-11-10/1445210699mapservicetoken-error.png)
 
 ## Add MapServiceToken
 
@@ -48,11 +48,11 @@ To use a `MapControl` in your app, you must be a registered Windows developer an
 
 When you’ve done this, go to your developer Dashboard and select your app. On the left, click on ***Services***, then ***Maps***. Click the button ***Get token*** that appears on the right.
 
-![Map Service get token](https://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2015/10/1445210753dashboard-01.png)
+![Map Service get token](/assets/images/2015-11-10/1445210753dashboard-01.png)
 
 You will see two strings: ***Application ID*** and ***Authentication Token***. The second is what we need.
 
-![Map Service Authentication Token](https://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2015/10/1445210761dashboard-02.png)
+![Map Service Authentication Token](/assets/images/2015-11-10/1445210761dashboard-02.png)
 
 Returning to our project, in the Code view of ***MainPage.xaml***, update the following lines:
 
@@ -64,7 +64,7 @@ Returning to our project, in the Code view of ***MainPage.xaml***, update the fo
 
 Here I added the `MapServiceToken`, a name for the control and a couple of properties to make the map almost fill the screen. Remember to replace `<your authentication token>` with your token. The `MapControl` does not show an actual map in design view, it shows the window where the map will fit, so you won’t be able to see what is going on right away. Run the app to see the result.
 
-![First successful run](https://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2015/10/1445210715wp_ss_20151014_0001.png)
+![First successful run](/assets/images/2015-11-10/1445210715wp_ss_20151014_0001.png)
 
 ## Get Current Location
 
@@ -153,15 +153,15 @@ private void AppBarButton_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e
 
 If you run the app now, you will get the following exception.
 
-!(GetLocation error)[https://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2015/10/1445210722wp_ss_20151015_0001.png]
+![GetLocation error](/assets/images/2015-11-10/1445210722wp_ss_20151015_0001.png)
 
 This happens because we need to declare when we want to get the users location, so that it isn’t done without their permission. Open ***Package.appxmanifest*** from the ***Solution Explorer***. In ***Capabilities***, ***tab + click*** Location from the list.
 
-!(Declare Location Capability)[https://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2015/10/1445210746capabilities.png]
+![Declare Location Capability](/assets/images/2015-11-10/1445210746capabilities.png)
 
 Run the app and press the ***Get Location*** button in the Command Bar. After a couple of seconds, depending on your network, a message will display with your location.
 
-!(GetLocation successful)[https://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2015/10/1445210729wp_ss_20151015_0002.png]
+![GetLocation successful](/assets/images/2015-11-10/1445210729wp_ss_20151015_0002.png)
 
 ## Change Map Center and Zoom Level
 
@@ -211,7 +211,7 @@ try
 
 The result is in the screenshot below. The user can ask for their location and zoom in and out.
 
-![Map with Slider](https://dab1nmslvvntp.cloudfront.net/wp-content/uploads/2015/10/1445210739wp_ss_20151018_0001.png)
+![Map with Slider](/assets/images/2015-11-10/1445210739wp_ss_20151018_0001.png)
 
 ## Adding Pushpins
 
