@@ -1,3 +1,8 @@
+---
+layout: post
+tags: [sitepoint, ios]
+---
+
 With the launch of iOS 10 developers can make use of a new exciting API: *Speech Recognition*. The concept of translating audio to text is known to both the users and the developers. iOS has offered this feature through *Siri*, and its keyboard dictation button in the previous versions. Yet, the new framework has more benefits and is easy to implement, as you are soon to discover.
 
 The code for this article can be downloaded on [GitHub](https://github.com/sitepoint-editors/SpeechApp).

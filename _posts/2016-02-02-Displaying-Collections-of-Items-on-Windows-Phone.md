@@ -1,3 +1,8 @@
+---
+layout: post
+tags: [sitepoint, windows-phone]
+---
+
 Mobile apps often need to display long lists of items to users. These could contain images, text or other custom components. Every mobile platform has its unique set of components and concepts for displaying such lists and Windows Phone is no exception. In this tutorial I will show you how to make your own customized list of items, change the order of these lists, display options, and add items programmatically.
 
 You can download the full project from [GitHub](https://github.com/sitepoint-editors/Item-Collectors).
