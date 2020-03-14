@@ -1,3 +1,8 @@
+---
+layout: post
+tags: [sitepoint, ios]
+---
+
 Whilst they are often overused, notifications are an effective way to get a users attention and inform them of updates or actions they need to take. iOS 10 brings updates to notifications such as new messages, offers, and timetable changes. In this tutorial I will show you how to use notifications in your iOS apps and show the new features that iOS 10 introduces. To develop push notifications for iOS 10 you will need the latest version of *Xcode available*, *Xcode 8 beta*, which is available on [the download page](https://developer.apple.com/download/).
 
 You can download the full project from [GitHub](https://github.com/sitepoint-editors/ios-pushnotifications).
