@@ -1,84 +1,135 @@
 ---
 layout: page
-title: 'Experience'
-subtitle: 'Coming soon'
 permalink: /experience/
 ---
 
- <div class="posts-list" style="border-top: 1.5px solid {{ site.navbar-col }};">
-   {% for post in paginator.posts %} 
-	<article class="post-preview" >
-		{% if post.img-to-head %}
-		<div style="width: 100%;display: table; margin-bottom: 20px;">
-			<div style="display: table-cell;
-				    vertical-align: middle;
-				    padding-right: 10px;">	      
-		{% endif %}
-		<h3 class="post-title">
-			<a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-		</h3>
-		{% if post.subtitle %}
-		<h4 class="post-subtitle">{{ post.subtitle }}</h4>
-		{% endif %}
-		<p class="post-meta" 
-		   style="margin-bottom:
-			  {% if post.img-to-head %}
-			  -5px
-			  {% else %}
-			  15px
-			  {% endif %}
-			  ;">
-			{{ post.date | date_to_string }}
-			{% if post.linktormd %}
-			<a href="{{ post.path | prepend: site.github_repo | 
-				 replace:'/_posts/','/blob/master/_codes/' | replace:'.md','.Rmd'  }}">
-				<i class="fa fa-fw fa-github"></i></a>
-			{% endif %}
-		</p>
-		{% if post.img-to-head %}
-			</div>
-			<a class="post-head--overlay" 
-			   href="{{ post.url | prepend: site.baseurl }}"
-			   style="display: table-cell;
-				  padding: 0 52px;
-				  border-radius: 3em 0 0 3em;
-				  width:  65px;
-				  background-image: url('{{ post.share-img }}');
-				  background-size: auto;
-				  border: 0.5px solid {{ site.navbar-col }};">
-			</a>
-		</div>
-		{% endif %}
-		<div class="post-entry">
-			{{ post.content | strip_html|  truncatewords: 30 }}
-			<a href="{{ post.url | prepend: site.baseurl }}">[more]</a>
-		</div>
-		{% if post.tags.size > 0 %}
-		<div class="blog-tags">
-			Tags:
-			{% if site.link-tags %}
-			{% for tag in post.tags %}
-			<a href="{{ site.baseurl }}/tags#{{- tag -}}">{{- tag -}}</a>
-			{% endfor %}
-			{% else %}
-			{{ post.tags | join: ", " }}
-			{% endif %}
-		</div>
-		{% endif %}
-	</article>
-   {% endfor %}
- </div>
-{% if paginator.total_pages > 1 %}
-<ul class="pager main-pager">
-	{% if paginator.previous_page %}
-	<li class="previous">
-		<a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Newer Posts</a>
-	</li>
-	{% endif %}
-	{% if paginator.next_page %}
-	<li class="next">
-		<a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older Posts &rarr;</a>
-	</li>
-	{% endif %}
-</ul>
-{% endif %}
+<p style="text-align: center;">
+    <a href="/assets/cv_en.pdf" target="_blank">Download my CV</a>
+</p>
+
+<h3 class="post-title">
+    Work experiences 
+</h3>
+
+<div class="posts-list" style="border-top: 1.5px solid {{ site.navbar-col }};">
+
+    <article class="post-preview" >
+        <p>
+            <a href="https://symvaro.com">
+                <img src="/assets/images/symvaro_logo.jpg" style="border-radius: 10px;" />
+            </a>
+        </p>
+        <div style="width: 100%; display: table; margin-bottom: 20px;">
+            <div style="display: table-cell;
+                vertical-align: middle;
+                padding-right: 10px;">
+                <h3 class="post-title">
+                    Mobile Application Developer
+                </h3>
+                <h4 class="post-subtitle">
+                    Symvaro GmbH
+                </h4>
+                <p class="post-meta" 
+                    style="margin-bottom: -5px;">
+                    Jan 2017 - Present
+                </p>
+                <br/>
+                <p class="post-subtitle">
+                    Responsible for the development and maintenance of iOS and Android applications.
+                     Working on exciting stuff with Bluetooth receivers, OCR scanners, etc.
+                </p>
+            </div>
+        </div>
+    </article>
+
+    <article class="post-preview" >
+        <p>
+            <a href="http://www.easypay.al/en/">
+                <img src="/assets/images/easypay_logo.jpg" style="border-radius: 10px;" />
+            </a>
+        </p>
+        <div style="width: 100%; display: table; margin-bottom: 20px;">
+            <div style="display: table-cell;
+                vertical-align: middle;
+                padding-right: 10px;">
+                <h3 class="post-title">
+                    Mobile Application Developer
+                </h3>
+                <h4 class="post-subtitle">
+                    EasyPay shpk
+                </h4>
+                <p class="post-meta" 
+                    style="margin-bottom: -5px;">
+                    May 2015 - June 2019
+                </p>
+                <br/>
+                <p class="post-subtitle">
+                    Responsible for the development of iOS, Android and Universal Windows applications. 
+                    Worked and experimented with several applications, added new features,
+                     built a Messenger chatbot, a Unity AR game for promotion, etc.
+                </p>
+            </div>
+        </div>
+    </article>
+
+    <article class="post-preview" >
+        <p>
+            <a href="https://www.sitepoint.com/">
+                <img src="/assets/images/sitepoint_logo.jpg" style="border-radius: 10px;" />
+            </a>
+        </p>
+        <div style="width: 100%; display: table; margin-bottom: 20px;">
+            <div style="display: table-cell;
+                vertical-align: middle;
+                padding-right: 10px;">
+                <h3 class="post-title">
+                    Mobile Channel author
+                </h3>
+                <h4 class="post-subtitle">
+                    SitePoint PTY ltd
+                </h4>
+                <p class="post-meta" 
+                    style="margin-bottom: -5px;">
+                    Jun 2015 – Feb 2017
+                </p>
+                <br/>
+                <p class="post-subtitle">
+                    Responsible for writing tutorials on mobile development.
+                </p>
+            </div>
+        </div>
+    </article>
+
+</div>
+
+<h3 class="post-title">
+    Collaborations
+</h3>
+
+<div class="posts-list" style="border-top: 1.5px solid {{ site.navbar-col }};"></div>
+    <article class="post-preview" >
+        <p>
+            <a href="https://globalct.com">
+                <img src="/assets/images/globalct_logo.jpg" style="border-radius: 10px;" />
+            </a>
+        </p>
+        <div style="width: 100%; display: table; margin-bottom: 20px;">
+            <div style="display: table-cell;
+                vertical-align: middle;
+                padding-right: 10px;">
+            </div>
+        </div>
+
+        <p>
+            <a href="http://www.fastech.com.al/index.php/en/">
+                <img src="/assets/images/fastech_logo.jpg" style="border-radius: 10px;" />
+            </a>
+        </p>
+        <div style="width: 100%; display: table; margin-bottom: 20px;">
+            <div style="display: table-cell;
+                vertical-align: middle;
+                padding-right: 10px;">
+            </div>
+        </div>
+    </article>
+</div>
