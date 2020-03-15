@@ -381,11 +381,16 @@ footer .theme-by {
   width: 100%;
 }
 .post-image {
-  float: right;
-  height: 192px;
-  width: 192px;
-  margin-top: -35px;
-  filter: grayscale(90%);
+  width: 150px;
+  height: 150px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  border-radius: 50%;
+  margin-top: 0px;
+  margin-left: 15px;
+  margin-right: 15px;
+  filter: grayscale(80%);
 }
 .post-image:hover {
   filter: grayscale(0%);

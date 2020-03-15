@@ -1,6 +1,7 @@
 ---
 layout: post
 tags: [sitepoint, windows-phone]
+bigimg: /assets/images/2015-06-10/image.jpg
 ---
 
 Before we get started there are a few things I would like you to know about developing apps for Windows Phone 8.1. You are going to need *Visual Studio Professional 2013 Update 4 IDE* as a programming environment and a basic understanding of Object Oriented Programming languages. The programming language is *C#*, which is similar to *Java* if you find that more familiar. You also need to have Windows 8.1 installed. Today, I'm going to show you how to build your first Windows Phone app step by step starting from the installation of the IDE. So let's get our hands dirty!

@@ -49,7 +49,7 @@ google_analytics: "UA-117920505-1"
 # --- Comments --- #
 disqus: dieghernan
 
-excerpt_length: 10
+excerpt_length: 50
 
 # Character used to separate site title and description in HTML document title and RSS
 title-separator: "-"

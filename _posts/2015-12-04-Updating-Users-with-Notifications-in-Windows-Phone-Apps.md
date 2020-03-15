@@ -1,6 +1,7 @@
 ---
 layout: post
 tags: [sitepoint, windows-phone]
+bigimg: /assets/images/2015-12-04/image.jpg
 ---
 
 There are different ways an app can interact with a user. Windows Phone has a unique way of giving the latest information, even when the app is not running, through tiles and badges. This saves battery and is a user friendly experience. Whether a new email, missed call, special event in the calendar, photos in your contact list, or your personal photos, the design of Windows Phone makes it easy to let you know something new has arrived. In this article I will show how to implement these notifications into your app.

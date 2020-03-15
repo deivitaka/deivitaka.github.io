@@ -1,6 +1,7 @@
 ---
 layout: post
 tags: [sitepoint, android]
+bigimg: /assets/images/2016-03-16/image.jpg
 ---
 
 Released in 2007, [Gradle](http://gradle.org/) is a popular open-source automated build system that makes working on large projects easier. It’s based on concepts from its predecessors [Apache Maven](https://maven.apache.org/) and [Apache Ant](http://ant.apache.org/), but uses a Groovy-based domain specific language (DSL) and Java, instead of XML.

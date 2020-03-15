@@ -1,6 +1,7 @@
 ---
 layout: post
 tags: [sitepoint, ios]
+bigimg: /assets/images/2017-01-31/image.jpg
 ---
 
 With the introduction of the “Proactive” feature in iOS 9, Apple is trying to *proactively* assist you. The system learns from your actions and attempts to anticipate them. It starts showing suggestions, recommendations, apps you frequently use, etc.

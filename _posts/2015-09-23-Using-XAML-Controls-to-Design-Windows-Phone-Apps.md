@@ -1,6 +1,7 @@
 ---
 layout: post
 tags: [sitepoint, windows-phone]
+bigimg: /assets/images/2015-09-23/image.jpg
 ---
 
 In this article I intend to show the possibilities for creating a Windows Phone app without any coding by designing it. In my opinion it’s easier to learn how to design first, and then add the code to connect the elements logically. With the tools offered today, it’s as simple as drag and drop.
