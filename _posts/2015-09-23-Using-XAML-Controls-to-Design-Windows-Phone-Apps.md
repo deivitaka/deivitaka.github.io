@@ -1,3 +1,8 @@
+---
+layout: post
+tags: [sitepoint, windows-phone]
+---
+
 In this article I intend to show the possibilities for creating a Windows Phone app without any coding by designing it. In my opinion it’s easier to learn how to design first, and then add the code to connect the elements logically. With the tools offered today, it’s as simple as drag and drop.
 
 Visual Studio has lots of XAML controls ready to use for designing a beautiful new app. Let’s get started.

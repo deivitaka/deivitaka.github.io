@@ -1,3 +1,8 @@
+---
+layout: post
+tags: [sitepoint, android]
+---
+
 Passwords have had their day, with software vendors and hardware manufacturers encouraging users to try other methods of securing their data. Fingerprint readers are becoming more common on Android devices since Marshmallow introduced a new Fingerprint API and in this tutorial I will show you how to implement them in your apps.
 
 You can download the full project from [GitHub](https://github.com/sitepoint-editors/AndroidFingerprintAPI).

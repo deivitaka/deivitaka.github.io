@@ -1,3 +1,8 @@
+---
+layout: post
+tags: [sitepoint, ios]
+---
+
 It doesn’t matter if the main focus of your app is to capture an amazing landscape, or just an innocent selfie. What is important to developers is to let users make the most out of the camera and do it painlessly. To that end, Apple has done a remarkable work presenting `AVCapturePhotoOutput` in *iOS 10*. In this article I will show how to implement some of its features. The full project can be downloaded from [GitHub](https://github.com/sitepoint-editors/PhotoShot).
 
 ## What’s new?

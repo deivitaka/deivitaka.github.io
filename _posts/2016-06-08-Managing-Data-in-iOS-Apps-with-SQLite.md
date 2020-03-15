@@ -1,3 +1,8 @@
+---
+layout: post
+tags: [sitepoint, ios]
+---
+
 Almost all apps will need to store data of some form. Maybe you need to save user preferences, progress in a game, or offline data so your app can work without a network connection. Developers have a lot of options for managing data in iOS apps, from Core Data to cloud based storage, but one elegant and reliable local storage option is SQLite.
 
 In this tutorial I will show you how to add SQLite support to your app. You can find the final source code on [GitHub](https://github.com/sitepoint-editors/SQLiteApp).
