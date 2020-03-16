@@ -1,6 +1,7 @@
 ---
 layout: post
 tags: [sitepoint, windows-phone]
+bigimg: /assets/images/2015-11-10/image.jpg
 ---
 
 Maps have become an essential part of app use cases from tourist guides, to business directories and social recommendations. Unsurprisingly, the Windows Phone platform supports Bing maps by default and makes it easy to implement.

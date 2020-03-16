@@ -1,6 +1,7 @@
 ---
 layout: post
 tags: [sitepoint, ios]
+bigimg: /assets/images/2016-06-08/image.jpg
 ---
 
 Almost all apps will need to store data of some form. Maybe you need to save user preferences, progress in a game, or offline data so your app can work without a network connection. Developers have a lot of options for managing data in iOS apps, from Core Data to cloud based storage, but one elegant and reliable local storage option is SQLite.
