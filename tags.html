@@ -1,33 +1,57 @@
 ---
 layout: page
-title: 'Tag Index'
+title: 'Tag list'
 ---
 
-{%- capture site_tags -%}
-    {%- for tag in site.tags -%}
-        {{- tag | first -}}{%- unless forloop.last -%},{%- endunless -%}
-    {%- endfor -%}
-{%- endcapture -%}
-{%- assign tags_list = site_tags | split:',' | sort -%}
+<!-- Get all tags from pages and projects -->
+{% assign rawtags = "" %}
+{% for post in site.projects %}
+	{% assign ttags = post.tags | join:',' | append:',' %}
+	{% assign rawtags = rawtags | append:ttags %}
+{% endfor %}
+{% for post in site.posts %}
+	{% assign ttags = post.tags | join:',' | append:',' %}
+	{% assign rawtags = rawtags | append:ttags %}
+{% endfor %}
+{% assign rawtags = rawtags | split:',' | sort %}
 
-{%- for tag in tags_list -%}
-    <a href="#{{- tag -}}" class="btn btn-primary tag-btn"><i class="fa fa-tag" aria-hidden="true"></i>&nbsp;{{- tag -}}&nbsp;({{site.tags[tag].size}})</a>
+<!-- Group tags -->
+{% assign tagsGroup = rawtags | group_by: '' %}
+
+<!-- List all tags with count -->
+{%- for tag in tagsGroup -%}
+    <a href="#{{- tag['name'] -}}" class="btn btn-primary tag-btn"><i class="fa fa-tag" aria-hidden="true"></i>&nbsp;{{- tag['name'] -}}&nbsp;({{ tag['size'] }})</a>
 {%- endfor -%}
 
+<!-- List posts and projects per tag -->
 <div id="full-tags-list">
-{%- for tag in tags_list -%}
-    <h2 id="{{- tag -}}" class="linked-section">
+{%- for tag in tagsGroup -%}
+    <h2 id="{{- tag['name'] -}}" class="linked-section">
         <i class="fa fa-tag" aria-hidden="true"></i>
-        &nbsp;{{- tag -}}&nbsp;({{site.tags[tag].size}})
+        &nbsp;{{- tag['name'] -}}&nbsp;({{ tag['size'] }})
     </h2>
     <div class="post-list">
-        {%- for post in site.tags[tag] -%}
-            <div class="tag-entry">
-                <a href="{{ post.url | relative_url }}">{{- post.title -}}</a>
-                <div class="entry-date">
-                    <time datetime="{{- post.date | date_to_xmlschema -}}">{{- post.date | date: site.date_format -}}</time>
+        <!-- List projects -->
+        {% for post in site.projects %}
+            {% if post.tags contains tag['name'] %}
+                <div class="tag-entry">
+                    <a href="{{ post.url | relative_url }}">{{- post.title -}}</a>
+                    <div class="entry-date">
+                        <time datetime="{{- post.date | date_to_xmlschema -}}">{{- post.date | date: site.date_format -}}</time>
+                    </div>
                 </div>
-            </div>
+            {% endif %}
+        {%- endfor -%}
+        <!-- List posts -->
+        {% for post in site.posts %}
+            {% if post.tags contains tag['name'] %}
+                <div class="tag-entry">
+                    <a href="{{ post.url | relative_url }}">{{- post.title -}}</a>
+                    <div class="entry-date">
+                        <time datetime="{{- post.date | date_to_xmlschema -}}">{{- post.date | date: site.date_format -}}</time>
+                    </div>
+                </div>
+            {% endif %}
         {%- endfor -%}
     </div>
 {%- endfor -%}
