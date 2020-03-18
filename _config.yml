@@ -13,6 +13,8 @@ collections:
   projects:
     output: true
     permalink: /projects/:name/
+  experience:
+    output: true
 
 # --- Navigation bar options --- #
 navbar-links:
