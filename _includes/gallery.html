@@ -1,0 +1,55 @@
+<html>
+
+    <head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+
+        <!-- A jQuery plugin that adds cross-browser mouse wheel support. (Optional) -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
+
+        <!-- Actual includes needed for the gallery -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.2.19/js/lightgallery-all.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.2.19/css/lightgallery.min.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.0/isotope.pkgd.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/picturefill/3.0.2/picturefill.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.0/imagesloaded.pkgd.min.js"></script>
+    </head>
+
+    <body>
+        <div id="image-gallery" class="image-gallery">
+        <div id="gallery-sizer" class="gallery-sizer"></div>
+
+        {% for photo in include.gallery %}
+        <div class="image-wrapper">
+            <a href="{{ photo.href | absolute_url }}" class="image">
+                <img style="border-radius: 8px" alt="{{ photo.alt }}" src="{{ photo.href | absolute_url }}" />
+            </a>
+        </div>
+        {% endfor %}
+
+        </div>
+        <br/>
+
+        <script>
+            $(document).ready(function() {
+                var $gallery = $("#image-gallery").lightGallery({
+                    thumbnail: false,
+                    selector: '.image'
+                });
+            });
+
+            // init isotope
+            var $grid = $('#image-gallery').isotope({
+                percentPosition: true,
+                columnWidth: '#gallery-sizer',
+                itemSelector: '.image-wrapper',
+                layoutMode: "masonry"
+            });
+
+            // layout Isotope after each image loads
+            $grid.imagesLoaded().progress( function() {
+                $grid.masonry();
+            });
+        </script>
+    </body>
+
+</html>
