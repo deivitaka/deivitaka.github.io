@@ -1,4 +1,5 @@
 ---
+title: iOS Trainings
 layout: post
 tags: [ios, protik-tirana]
 bigimg: /assets/images/2017-04-29/image.jpeg

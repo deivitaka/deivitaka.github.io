@@ -1,4 +1,5 @@
 ---
+title: Displaying collections of items on Windows Phone
 layout: post
 tags: [sitepoint, windows-phone]
 bigimg: /assets/images/2016-02-02/image.jpg

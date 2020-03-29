@@ -1,6 +1,8 @@
 ---
+title: iOS Speech API tutorial
 layout: post
 tags: [sitepoint, ios]
+image: /assets/images/2017-03-22/thumb.jpg
 bigimg: /assets/images/2017-03-22/image.jpg
 ---
 

@@ -1,4 +1,5 @@
 ---
+title: Updating users with Notifications in Windows Phone apps
 layout: post
 tags: [sitepoint, windows-phone]
 bigimg: /assets/images/2015-12-04/image.jpg
