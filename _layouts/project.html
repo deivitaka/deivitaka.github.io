@@ -1,116 +1,83 @@
 ---
 layout: base
 ---
-<header class="header-section {% if page.bigimg %}has-img{% endif %}">
-	{% if page.bigimg %}
-	<div class="big-img intro-header"  style=" background-image: url('{{ page.bigimg }}');">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-					<div class="page-heading">
-						<h1>{{ page.title }}</h1>
-						{% if page.subtitle %}
-						<hr class="small">
-						<span class="page-subheading">{{ page.subtitle }}</span>
-						{% endif %}
-					</div>
-				</div>
-			</div>			
-		</div>
-	</div>
-	{% endif %}
-	<div class="intro-header no-img">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-					<div class="page-heading">
-						<h1>{{ page.title }}</h1>
-						{% if page.subtitle %}
-						<hr class="small">
-						<span class="page-subheading">{{ page.subtitle }}</span>
-						{% endif %}
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</header>
+
+{% include header.html type="page" %}
+
+<br/>
 <div class="container">
-	<div class="row">
-		<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-			{% if page.githuburl %}
-			<div align="center">
-				<button title="Go to the GitHub repo of this project"
-					onclick="window.location.href = '{{ page.githuburl }}';">
-				See on <b>GitHub</b> <i class="fa fa-fw fa-github"></i>
-				</button>
-			</div>
-			{% endif %}
-			{% if page.donate %}
-			<div style="text-align: center;margin: 2em 0 0;">
-				<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-					<input type="hidden" name="cmd" value="_s-xclick" />
-					<input type="hidden" name="hosted_button_id" value="CE7GRZSQQSM62" />
-					<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" title="Donate $0.99 with PayPal" alt="Donate with PayPal button" />
-					<img alt="" border="0" src="https://www.paypal.com/en_ES/i/scr/pixel.gif" width="1" height="1" />
-				</form>				
-			</div>			
-			{% endif %}			
-			<article role="main" class="blog-post"  
-				 style="margin:1em 0 0; padding-bottom: 10px;
-					padding-top: 0.5px;
-					border-top: 0.5px solid  {{ site.navbar-col }};
-					border-bottom: 3px solid {{ site.navbar-col }};">
-				{% if page.date %}
-				<div class="post-heading" style="font-size: 90%;
-								 color: #808080;
-								 font-style: italic;
-								 margin-top: 5px;">
-					Released on {{ page.date | date_to_string }}
-				</div>
-				{% endif %}
-				{{ content }}
-			</article>
-			<div style="background-color: {{ site.background-light-col }};
-				    margin-top: 0;
-				    margin-bottom: -20px;
-				    padding: 10px 5px">
-				{% if page.tags.size > 0 %}
-<!--- Tags -->
-				<div class="blog-tags" style="margin-top: 0; margin-bottom: 10px;">
-				Tags:
-				{% if site.link-tags %}
-					{% for tag in page.tags %}
-					<a href="{{ site.baseurl }}/tags#{{- tag -}}">{{- tag -}}</a>
-					{% endfor %}
-				{% else %}
-					{{ page.tags | join: ", " }}
-				{% endif %}
-				</div>
-				{% endif %}
-<!--- Social Share -->
-      <section id = "social-share-section" >
-      	<span class="sr-only">Share: </span>
-      	<!--- Share on Twitter -->
-          <a href="https://twitter.com/intent/tweet?text={{ page.title | url_encode }}+{{ site.url }}{{ page.url }}"
-      		class="btn btn-social-icon btn-twitter" title="Share on Twitter">
-      		<span class="fa fa-fw fa-twitter" aria-hidden="true"></span>
-      		<span class="sr-only">Twitter</span>
-          </a>
-      	<!--- Share on Facebook -->
-          <a href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ page.url }}"
-      		class="btn btn-social-icon btn-facebook" title="Share on Facebook">
-      		<span class="fa fa-fw fa-facebook" aria-hidden="true"></span>
-      		<span class="sr-only">Facebook</span>
-          </a>
-        <!--- Share on LinkedIn -->
-          <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ site.url }}{{ page.url }}"
-          class="btn btn-social-icon btn-linkedin" title="Share on LinkedIn">
-      		<span class="fa fa-fw fa-linkedin" aria-hidden="true"></span>
-      		<span class="sr-only">LinkedIn</span>
-      	</a>
-      </section>
-			</div>	
-		</div>
-	</div>
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+
+      {% if page.gh-repo %}
+        {% assign gh_split =  page.gh-repo | split:'/'  %}
+        {% assign gh_user =  gh_split[0]  %}
+        {% assign gh_repo =  gh_split[1]  %}
+
+        <div id="header-gh-btns">
+          {% if page.gh-badge.size > 0 %}
+            {% for badge in page.gh-badge %}
+              {% case badge %}
+                {% when 'star'%}
+                  <iframe src="https://ghbtns.com/github-btn.html?user={{ gh_user }}&repo={{ gh_repo }}&type=star&count=true" frameborder="0" scrolling="0" width="120px" height="20px"></iframe>
+                {% when 'watch'%}
+                  <iframe src="https://ghbtns.com/github-btn.html?user={{ gh_user }}&repo={{ gh_repo }}&type=watch&v=2&count=true" frameborder="0" scrolling="0" width="120px" height="20px"></iframe>
+                {% when 'fork'%}
+                  <iframe src="https://ghbtns.com/github-btn.html?user={{ gh_user }}&repo={{ gh_repo }}&type=fork&count=true" frameborder="0" scrolling="0" width="120px" height="20px"></iframe>
+                {% when 'follow'%}
+                  <iframe src="https://ghbtns.com/github-btn.html?user={{ gh_user }}&type=follow&count=true" frameborder="0" scrolling="0" width="220px" height="20px"></iframe>
+              {% endcase %}
+            {% endfor %}
+          {% endif %}
+        </div>
+      {% endif %}
+
+      <article role="main" class="blog-post">
+        {{ content }}
+      </article>
+
+      {% if page.tags.size > 0 %}
+        <div class="blog-tags">
+          Tags:
+          {% if site.link-tags %}
+          {% for tag in page.tags %}
+            <a href="{{ '/tags' | relative_url }}#{{- tag -}}">{{- tag -}}</a>
+          {% endfor %}
+          {% else %}
+            {{ page.tags | join: ", " }}
+          {% endif %}
+        </div>
+      {% endif %}
+
+      {% if page.social-share %}
+        {% include social-share.html %}
+      {% endif %}
+
+      <ul class="pager blog-pager">
+        {% if page.previous.url %}
+        <li class="previous">
+          <a href="{{ page.previous.url | relative_url }}" data-toggle="tooltip" data-placement="top" title="{{page.previous.title}}">&larr; Previous Post</a>
+        </li>
+        {% endif %}
+        {% if page.next.url %}
+        <li class="next">
+          <a href="{{ page.next.url | relative_url }}" data-toggle="tooltip" data-placement="top" title="{{page.next.title}}">Next Post &rarr;</a>
+        </li>
+        {% endif %}
+      </ul>
+
+      {% if page.comments %}
+        <div class="disqus-comments">
+          {% include disqus.html %}
+        </div>
+          {% include fb-comment.html %}
+        <div class="staticman-comments">
+          {% include staticman-comments.html %}
+        </div>
+        <div class="justcomments-comments">
+          {% include just_comments.html %}
+        </div>
+      {% endif %}
+    </div>
+  </div>
 </div>

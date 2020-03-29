@@ -10,9 +10,6 @@
     {%- endif -%}
 
     <div class="card-body">
-      <!-- <p id="{{ project_id }}-name" class="card-text">
-        {{ post.title }}
-      </p> -->
       <h5 id="{{ project_id }}-name" class="card-title">
         {{ post.title }}
       </h5>
@@ -22,18 +19,9 @@
       {%- else -%}
         {% assign subtitle = post.excerpt | strip_html | xml_escape | truncatewords: site.excerpt_length %}
       {%- endif -%}
-      <!-- <h5 id="{{ project_id }}-desc" class="card-title">
-        {{ subtitle }}
-      </h5> -->
       <p id="{{ project_id }}-desc" class="card-text">{{ subtitle }}</p>
-        
-      <!-- <p id="{{ project_id }}-tags" class="card-text">
-        {%- for tag in post.tags -%}
-        <span class="badge badge-pill text-primary border border-primary ml-1">{{ tag }}</span>
-        {%- endfor -%}
-      </p> -->
 
-      <p id="{{ project_id }}-tags" class="card-text">
+      <p id="{{ project_id }}-tags" class="card-text" style="font-size: 16px;">
         {%- for tag in post.tags -%}
           <span class="badge badge-pill text-primary border border-primary ml-1">{{ tag }}</span>
         {%- endfor -%}
