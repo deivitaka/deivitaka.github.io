@@ -1,4 +1,5 @@
 ---
+title: Managing data in iOS apps with SQLite
 layout: post
 tags: [sitepoint, ios]
 bigimg: /assets/images/2016-06-08/image.jpg

@@ -1,4 +1,5 @@
 ---
+title: "Quick tip: Gradle and how it works with Android Studio"
 layout: post
 tags: [sitepoint, android]
 bigimg: /assets/images/2016-03-16/image.jpg

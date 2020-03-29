@@ -1,0 +1,31 @@
+<div class="wow animated fadeIn" data-wow-delay=".15s">
+  <a href="{{ post.url | prepend: site.baseurl }}" class="project card text-dark">
+    {%- if post.image -%}
+      {% assign image = post.image %}
+    {% else %}
+      {% assign image = post.bigimg %}
+    {%- endif -%}
+    {%- if image -%}
+      <img id="{{ project_id }}-img" class="card-img-top" src="{{ image }}" alt="{{ post.title }}" />
+    {%- endif -%}
+
+    <div class="card-body">
+      <h5 id="{{ project_id }}-name" class="card-title">
+        {{ post.title }}
+      </h5>
+
+      {%- if post.subtitle -%}
+        {% assign subtitle = post.subtitle %}
+      {%- else -%}
+        {% assign subtitle = post.excerpt | strip_html | xml_escape | truncatewords: site.excerpt_length %}
+      {%- endif -%}
+      <p id="{{ project_id }}-desc" class="card-text">{{ subtitle }}</p>
+
+      <p id="{{ project_id }}-tags" class="card-text" style="font-size: 16px;">
+        {%- for tag in post.tags -%}
+          <span class="badge badge-pill text-primary border border-primary ml-1">{{ tag }}</span>
+        {%- endfor -%}
+      </p>
+    </div>
+  </a>
+</div>

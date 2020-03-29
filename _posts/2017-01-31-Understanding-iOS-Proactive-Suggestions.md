@@ -1,6 +1,8 @@
 ---
+title: Understanding iOS Proactive suggestions
 layout: post
 tags: [sitepoint, ios]
+image: /assets/images/2017-01-31/thumb.jpg
 bigimg: /assets/images/2017-01-31/image.jpg
 ---
 

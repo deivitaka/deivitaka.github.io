@@ -1,6 +1,8 @@
 ---
+title: Using XAML controls to design Windows Phone apps
 layout: post
 tags: [sitepoint, windows-phone]
+image: /assets/images/2015-09-23/thumb.jpg
 bigimg: /assets/images/2015-09-23/image.jpg
 ---
 
