@@ -640,6 +640,7 @@ footer .theme-by {
 
 .pager {
   margin: 10px 0 0;
+  margin-bottom: 20px;
 }
 
 .pager.blog-pager {
@@ -833,3 +834,17 @@ a.btn.btn-primary.tag-btn:hover {
     -webkit-animation-delay: 0.25s;
     animation-delay: 0.25s;
 }
+
+/* Gallery */
+
+.image-wrapper, .gallery-sizer { width: 50%; }
+
+.image-gallery { display: block; }
+
+.image-gallery .image-wrapper { float: left; padding: 3px; }
+
+.image-gallery .image-wrapper .image { width: 100.1%; width: calc( 100% + 1px); height: 100%; }
+
+.image-gallery:after { content: ''; display: block; clear: both; }
+
+.caption { position: static; color: #AAA; }
