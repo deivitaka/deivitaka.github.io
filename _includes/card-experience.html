@@ -12,14 +12,14 @@
 
       {%- if exp.type == "employment" -%}
         <div class="card-body">
-          <h5 id="{{ project_id }}-name" class="card-title center-text">{{ exp.position }}</h5>
+          <h5 id="{{ project_id }}-position" class="card-title center-text">{{ exp.position }}</h5>
 
           {%- if exp.company -%}
-            <h5 id="{{ project_id }}-name" class="card-text center-text" style="font-weight: 600;">{{ exp.company }}</h5>
+            <h5 id="{{ project_id }}-company" class="card-text center-text" style="font-weight: 600;">{{ exp.company }}</h5>
           {%- endif -%}
 
           {%- if exp.period -%}
-            <h5 id="{{ project_id }}-name" class="card-text center-text">
+            <h5 id="{{ project_id }}-period-{{ exp.date }}" class="card-text center-text">
               {{ exp.period }}
             </h5>
           {%- endif -%}
