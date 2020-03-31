@@ -1,4 +1,5 @@
 ---
+title: "EasyPay: QR-code scanner"
 layout: post
 tags: [android, ios, easypay]
 bigimg: /assets/images/2016-10-27/image.jpg

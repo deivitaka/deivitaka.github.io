@@ -1,0 +1,36 @@
+{% assign exp = import.exp %}
+{% if exp.type == current_type %}
+  {% assign project_id = exp.company %}
+  <div class="wow animated fadeIn" data-wow-delay=".15s">
+    <a href="{{ exp.website }}" target="_blank" class="project card text-dark">
+      {%- if exp.logo -%}
+        <img id="{{ project_id }}-img" 
+          {%- if exp.type == "employment" -%} class="card-img-top"
+          {% else %} style="border-radius: 15px;" {%- endif -%}
+          src="{{ exp.logo }}" alt="{{ exp.company }}" />
+      {%- endif -%}
+
+      {%- if exp.type == "employment" -%}
+        <div class="card-body">
+          <h5 id="{{ project_id }}-name" class="card-title center-text">{{ exp.position }}</h5>
+
+          {%- if exp.company -%}
+            <h5 id="{{ project_id }}-name" class="card-text center-text" style="font-weight: 600;">{{ exp.company }}</h5>
+          {%- endif -%}
+
+          {%- if exp.period -%}
+            <h5 id="{{ project_id }}-name" class="card-text center-text">
+              {{ exp.period }}
+            </h5>
+          {%- endif -%}
+
+          {%- if exp.description -%}
+            <p id="{{ project_id }}-desc" class="card-text">
+              {{ exp.description }}
+            </p>
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+    </a>
+  </div>
+{% endif %}

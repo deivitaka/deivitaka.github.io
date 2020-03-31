@@ -1,4 +1,5 @@
 ---
+title: An introduction to Windows Phone 8.1 Development
 layout: post
 tags: [sitepoint, windows-phone]
 bigimg: /assets/images/2015-06-10/image.jpg

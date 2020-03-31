@@ -1,6 +1,8 @@
 ---
+title: How to use AVCapturePhotoOutput's best photo features
 layout: post
 tags: [sitepoint, ios]
+image: /assets/images/2017-05-09/thumb.jpg
 bigimg: /assets/images/2017-05-09/image.jpg
 ---
 

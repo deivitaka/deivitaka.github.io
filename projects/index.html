@@ -1,28 +1,21 @@
 ---
 layout: page
-title: 'My projects'
+title: 'Projects'
 subtitle: 'Some pieces of work coming soon'
 permalink: /projects/
 ---
 
-<div class="posts-list">
-   {% assign allprojs = site.projects | sort: 'date' | reverse %}
-   {% for project in allprojs %}
-   <article class="post-preview">
-      <h3 class="post-title">
-         <a href="{{ project.url | prepend: site.baseurl }}">
-            {% if project.featured %} 
-            <i class="fa fa-fw fa-heart-o"></i> 
-            {% endif %}
-            {{ project.title }}
-         </a>
-      </h3 >
-      <h4 class="post-subtitle">{{ project.subtitle }}</h4>
-      <h5 style="padding-bottom: 10px;"> {{ project.date | date_to_string }}</h5>
-      <div class="post-entry">
-         {{ project.content | strip_html | xml_escape | truncatewords: 30 }}
-         <a href="{{ project.url | prepend: site.baseurl }}">[more]</a>
-      </div>
-   </article>
-   {% endfor %}
+{% include scripts.html %}
+<link rel="stylesheet" href="/css/bootstrap.css">
+
+<!-- Animate CSS CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.css" type="text/css"/>
+
+<div class="card-columns three m-3 mt-5">
+  <div class="three">
+    {% for post in site.projects %}
+      {%- assign project_id = post.title | slugify -%}
+      {% include card.html %}
+    {% endfor %}
+  </div>
 </div>

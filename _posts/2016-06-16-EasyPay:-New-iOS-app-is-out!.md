@@ -1,4 +1,5 @@
 ---
+title: "EasyPay: New iOS app is out!"
 layout: post
 tags: [ios, easypay]
 bigimg: /assets/images/2016-06-16/image.jpg

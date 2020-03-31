@@ -1,4 +1,5 @@
 ---
+title: Securing your Android apps with the Fingerprint API
 layout: post
 tags: [sitepoint, android]
 bigimg: /assets/images/2016-09-02/image.jpg
