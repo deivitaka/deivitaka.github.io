@@ -16,23 +16,9 @@ permalink: /projects/
 
 <div class="card-columns three m-3 mt-5">
   <div class="three">
-    {% for project in site.projects %}
-
-      {%- assign project_type  = "local" -%}
-      {%- assign project_id    = project.name | slugify -%}
-      {%- assign project_img   = project.image -%}
-      {%- assign project_name  = project.name -%}
-      {%- assign project_desc  = project.description -%}
-      {%- assign project_tools = project.tools -%}
-
-      {%- if project.external_url -%}
-        {%- assign project_url = project.external_url -%}
-      {%- else -%}
-        {%- assign project_url = project.url | relative_url -%}
-      {%- endif -%}
-
+    {% for post in site.projects %}
+      {%- assign project_id = post.title | slugify -%}
       {% include card.html %}
-
     {% endfor %}
   </div>
 </div>
