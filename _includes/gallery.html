@@ -1,3 +1,10 @@
+{% if include.itemsPerRow > 0 %}
+    {% assign itemsPerRow = include.itemsPerRow %}
+{% else %}
+    {% assign itemsPerRow = 1 %}
+{% endif %}
+{% assign width = 100 | divided_by: itemsPerRow %}
+
 <html>
 
     <head>
@@ -12,18 +19,59 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.0/isotope.pkgd.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/picturefill/3.0.2/picturefill.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.0/imagesloaded.pkgd.min.js"></script>
+
+        <style>
+            /* Gallery */
+
+            .image-wrapper, .gallery-sizer { width: {{ width }}%; }
+
+            .image-gallery { display: block; }
+
+            .image-gallery .image-wrapper { float: left; padding: 3px; }
+
+            .image-gallery .image-wrapper .image { width: {{ width }}.1%; width: calc( {{ width }}% + 1px); height: {{ width }}%; }
+
+            .image-gallery:after { content: ''; display: block; clear: both; }
+
+            .caption { position: static; color: #AAA; }
+        </style>
     </head>
 
     <body>
+
         <div id="image-gallery" class="image-gallery">
         <div id="gallery-sizer" class="gallery-sizer"></div>
 
-        {% for photo in include.gallery %}
-        <div class="image-wrapper">
-            <a href="{{ photo.href | absolute_url }}" class="image">
-                <img style="border-radius: 8px" alt="{{ photo.alt }}" src="{{ photo.href | absolute_url }}" />
-            </a>
-        </div>
+        {% assign images = "" | slit: ";;" %}
+        {% if include.gallery_dir %}
+            <!-- Set files from directory -->
+            {% assign files = site.static_files | sorted
+                | where_exp: "item", "item.path contains include.gallery_dir" %}
+            {% for file in files %}
+                {% assign filename = file.name | remove: file.extname %}
+                {% assign image = filename | append: ";" | append: file.path %}
+                {% assign images = images | append: image | append: ";;" %}
+            {% endfor %}
+        {% else %}
+            <!-- Set files from array -->
+            {{ include.gallery.count }}
+            {% for photo in include.gallery %}
+                {% assign image = photo.alt | append: ";" | append: photo.href %}
+                {% assign images = images | append: image | append: ";;" %}
+            {% endfor %}
+        {% endif %}
+
+        <!-- Show images -->
+        {% assign images = images | split: ";;"%}
+        {% for image in images %}
+            {% assign parts = image | split: ";" %}
+            {% assign href = parts[0] | absolute_url %}
+            {% assign href = parts[1] %}
+            <div class="image-wrapper">
+                <a href="{{ href }}" class="image">
+                    <img style="border-radius: 8px;" alt="{{ alt }}" src="{{ href }}" />
+                </a>
+            </div>
         {% endfor %}
 
         </div>
