@@ -1,74 +1,47 @@
-{% assign postsCounter = postsCounter | plus: 1 %}
-{% assign index = postsCounter | divided_by: 2 %}
-{% assign index = index | times: 2 %}
-{% assign index = postsCounter | minus: index %}
-<article class="post-preview" >
-    {% if project.img-to-head %}
-    <div style="width: 100%;display: table; margin-bottom: 20px;">
-        <div style="display: table-cell;
-            vertical-align: middle;
-            padding-right: 10px;">	      
-    {% endif %}
-    <h3 class="post-title">
-        <a href="{{ project.url | prepend: site.baseurl }}">{{ project.title }}</a>
-    </h3>
-    {% if project.subtitle %}
-    <h4 class="post-subtitle">{{ project.subtitle }}</h4>
-    {% endif %}
-    <p class="post-meta" 
-        style="margin-bottom:
-        {% if project.img-to-head %}
-        -5px
-        {% else %}
-        15px
+<html>
+    <head>
+        <link rel="stylesheet" href="/css/bootstrap.css">
+        {% include scripts.html %}
+    </head>
+
+    <body>
+        <!-- Description -->
+        {% if page.description %}
+            <p>{{ page.description }}</p>
         {% endif %}
-        ;">
-        {% if project.linktormd %}
-        <a href="{{ project.path | prepend: site.github_repo | 
-            replace:'/_posts/','/blob/master/_codes/' | replace:'.md','.Rmd'  }}">
-            <i class="fa fa-fw fa-github"></i></a>
+        
+        <!-- Features -->
+        {% if page.features.size > 0 %}
+            <p>
+                Features:
+                <div>
+                    {% for feature in page.features %}
+                        <span class="badge badge-pill text-primary border border-primary ml-1">{{ feature }}</span>
+                    {% endfor %}
+                </div>
+            </p>
         {% endif %}
-    </p>
-    {% if project.img-to-head %}
-        </div>
-        <a class="post-head--overlay" 
-            href="{{ project.url | prepend: site.baseurl }}"
-            style="display: table-cell;
-            padding: 0 52px;
-            border-radius: 3em 0 0 3em;
-            width:  65px;
-            background-image: url('{{ project.share-img }}');
-            background-size: auto;
-            border: 0.5px solid {{ site.navbar-col }};">
-        </a>
-    </div>
-    {% endif %}
-    <div class="post-entry-container">
-        {% if project.bigimg %}
-        <a href="{{ project.url | relative_url }}">
-            <div class="post-image" style="background-image: url({{ project.bigimg }});
-            float: {% if index == 0 %} left {% else %} right {% endif %};">
-            </div>
-        </a>
+        
+        <!-- Links -->
+        {% if page.links.size > 0 %}
+            <p>
+                Available on:
+                <div style="text-align: center;">
+                    {% for link in page.links %}
+                    <span class="badge badge-pill text-primary border border-primary ml-1" style="margin: 10px;">
+                        <a href="{{ link.href }}" target="_blank">
+                            <img src="{{ link.src }}" style="margin: 10px; width: 50px; height: 50px;">
+                        </a>
+                    </span>
+                    {% endfor %}
+                </div>
+            </p>
         {% endif %}
-        <div class="post-entry">
-        {{ project.excerpt | strip_html | xml_escape | truncatewords: site.excerpt_length }}
-        {% assign excerpt_word_count = project.excerpt | number_of_words %}
-        {% if project.content != project.excerpt or excerpt_word_count > site.excerpt_length %}
-            <a href="{{ project.url | relative_url }}" class="post-read-more">[Read&nbsp;More]</a>
-        {% endif %}
-        </div>
-    </div>
-    {% if project.tags.size > 0 %}
-    <div class="blog-tags">
-        Tags:
-        {% if site.link-tags %}
-        {% for tag in project.tags %}
-        <a href="{{ site.baseurl }}/tags#{{- tag -}}">{{- tag -}}</a>
-        {% endfor %}
-        {% else %}
-        {{ project.tags | join: ", " }}
-        {% endif %}
-    </div>
-    {% endif %}
-</article>
+        
+        <!-- Gallery -->
+        {% include gallery.html gallery=page.gallery gallery_dir=page.gallery_dir
+            type="screenshot" itemsPerRow=5 %}
+
+    </body>
+
+</html>
