@@ -30,7 +30,11 @@
                     {% for link in page.links %}
                     <span class="badge badge-pill text-primary border border-primary ml-1" style="margin: 10px;">
                         <a href="{{ link.href }}" target="_blank">
+                            {% if link.src %}
                             <img src="{{ link.src }}" style="margin: 10px; width: 50px; height: 50px;">
+                            {% else if link.desc %}
+                            <p>{{ link.desc }}</p>
+                            {% endif %}
                         </a>
                     </span>
                     {% endfor %}
