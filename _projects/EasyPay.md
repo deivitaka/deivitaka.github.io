@@ -8,6 +8,7 @@ bigimg: /assets/images/projects/easypay-cover.jpg
 tags: [ios, android, windows, easypay]
 comments: false
 category: work
+priority: 10
 gallery_dir: "/assets/images/projects/easypay/"
 features: [Biometric authentication, Push Notifications, Networking, QR reader, Local storage, Map, Camera, Dynamic image loading]
 links: [

@@ -1,7 +1,7 @@
 ---
 layout: page
 title: 'Projects'
-subtitle: 'Some pieces of work coming soon'
+subtitle: 'A collection of my personal and professional projects.'
 permalink: /projects/
 ---
 
@@ -13,7 +13,8 @@ permalink: /projects/
 
 <div class="card-columns three m-3 mt-5">
   <div class="three">
-    {% for post in site.projects %}
+    {% assign projects = site.projects | sort: "priority" | reverse %}
+    {% for post in projects %}
       {%- assign project_id = post.title | slugify -%}
       {% include card.html %}
     {% endfor %}
