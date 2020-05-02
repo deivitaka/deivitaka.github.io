@@ -6,6 +6,7 @@ description: One of the earliest games I have developed. It was a nice challenge
 image: /assets/images/projects/chess-cover-small.jpg
 bigimg: /assets/images/projects/chess-cover.jpg
 tags: [games, java]
+features: [Player vs Player]
 comments: false
 category: personal
 priority: 5
