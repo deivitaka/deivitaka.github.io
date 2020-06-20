@@ -2,7 +2,7 @@
 layout: project
 title: EasyPay
 subtitle: An one-stop-shop that offers online payments for the Albanian market.
-description: EasyPay is the first online payment provider in Albania, with numerous services offered from the mobile apps.
+description: EasyPay is the first online payment provider in Albania, with numerous services offered from the mobile apps. Through the years it has played a leading role in innovating and driving the market forward.
 image: /assets/images/projects/easypay-cover-small.jpg
 bigimg: /assets/images/projects/easypay-cover.jpg
 tags: [ios, android, windows, easypay]
