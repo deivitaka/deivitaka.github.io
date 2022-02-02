@@ -12,11 +12,9 @@ permalink: /projects/
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.css" type="text/css"/>
 
 <div class="card-columns three m-3 mt-5">
-  <div class="three">
     {% assign projects = site.projects | sort: "priority" | reverse %}
     {% for post in projects %}
       {%- assign project_id = post.title | slugify -%}
       {% include card.html %}
     {% endfor %}
-  </div>
 </div>

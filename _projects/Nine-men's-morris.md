@@ -10,7 +10,7 @@ tags: [games, windows, C#]
 features: [Player vs Player]
 comments: false
 category: personal
-priority: 4
+priority: 100
 ---
 
 {% include project-item.html page=page %}

@@ -9,7 +9,7 @@ gallery_dir: "/assets/images/projects/tatimpaguesit-dixhital/"
 tags: [android, ios]
 comments: false
 category: work
-priority: 6
+priority: 401
 links: [
     {
         src: "/assets/images/appstore.png",

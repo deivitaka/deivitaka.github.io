@@ -9,7 +9,7 @@ gh-badge: [star, fork, follow]
 comments: false
 category: library
 tags: [ios, swift]
-priority: 7
+priority: 300
 links: [
     {
         href: "https://github.com/deivitaka/DTPageControl",

@@ -8,7 +8,7 @@ bigimg: /assets/images/projects/space-fighter-cover.jpg
 tags: [games, java]
 comments: false
 category: personal
-priority: 5
+priority: 103
 gallery_dir: "/assets/images/projects/space-fighter/"
 features: [Multi-level, High scores, Mouse/Keyboard input, Power-Ups]
 links: [

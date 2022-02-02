@@ -11,7 +11,7 @@ features: [Networking, Maps, Geofencing]
 tags: [windows-phone, microsoft, imagine-cup]
 comments: false
 category: personal
-priority: 6
+priority: 400
 links: [
     {
         src: "/assets/images/windowsstore.png",

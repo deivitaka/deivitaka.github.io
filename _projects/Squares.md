@@ -9,7 +9,7 @@ gallery_dir: "/assets/images/projects/squares/"
 tags: [games, windows, C#]
 comments: false
 category: personal
-priority: 5
+priority: 101
 features: [Player vs Player]
 links: [
     {
