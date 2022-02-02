@@ -11,7 +11,7 @@ features: [Contacts, Calendar, Networking, Push Notifications]
 tags: [symvaro, ios, android]
 comments: false
 category: work
-priority: 9
+priority: 402
 links: [
     {
         src: "/assets/images/appstore.png",

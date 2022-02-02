@@ -10,7 +10,7 @@ tags: [symvaro, ios, android]
 features: [Networking, Local storage, Camera, OpenCV]
 comments: false
 category: work
-priority: 10
+priority: 408
 links: [
     {
         src: "/assets/images/appstore.png",

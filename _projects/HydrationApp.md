@@ -10,7 +10,7 @@ tags: [waterdrop, ios]
 features: [Push Notifications, Networking, Local storage, Dark mode support, BLE, Charts]
 comments: false
 category: work
-priority: 10
+priority: 412
 links: [
     {
         src: "/assets/images/appstore.png",

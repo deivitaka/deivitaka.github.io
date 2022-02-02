@@ -10,7 +10,7 @@ tags: [symvaro, ios]
 features: [Networking, Local storage, Dark mode support, Charts, Photos, Maps, Dynamic forms]
 comments: false
 category: work
-priority: 10
+priority: 411
 links: [
     {
         src: "/assets/images/appstore.png",

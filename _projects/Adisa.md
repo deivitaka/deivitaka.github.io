@@ -11,7 +11,7 @@ features: [Push Notifications, Networking, Calendar, Local storage]
 tags: [ios, android]
 comments: false
 category: personal
-priority: 6
+priority: 201
 ---
 
 {% include project-item.html page=page %}

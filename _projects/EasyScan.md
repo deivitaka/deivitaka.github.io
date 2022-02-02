@@ -11,7 +11,7 @@ tags: [easypay, ios, android]
 features: [Networking, QR reader, OCR, Camera]
 comments: false
 category: work
-priority: 10
+priority: 403
 links: [
     {
         desc: "Privately distributed"

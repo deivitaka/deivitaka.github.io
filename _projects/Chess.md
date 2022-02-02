@@ -9,7 +9,7 @@ tags: [games, java]
 features: [Player vs Player]
 comments: false
 category: personal
-priority: 5
+priority: 104
 gallery_dir: "/assets/images/projects/chess/"
 links: [
     {

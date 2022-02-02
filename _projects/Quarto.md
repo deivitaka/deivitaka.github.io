@@ -8,7 +8,7 @@ bigimg: /assets/images/projects/quarto-2d-cover.png
 tags: [games, windows, windows-phone]
 comments: false
 category: personal
-priority: 5
+priority: 105
 gallery_dir: "/assets/images/projects/quarto-2d/"
 features: [Player vs Player, Player vs Computer]
 links: [

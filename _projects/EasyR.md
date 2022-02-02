@@ -8,7 +8,7 @@ bigimg: /assets/images/projects/easyr-cover.png
 tags: [ios, android, unity, AR, easyr, easypay]
 comments: false
 category: work
-priority: 10
+priority: 405
 gallery_dir: "/assets/images/projects/easyr/"
 features: [Augmented reality, Social media sharing]
 ---

@@ -11,7 +11,7 @@ features: [Push Notifications, Networking, Dynamic image loading, Local storage]
 tags: [protik-tirana, space-apps, ios, android]
 comments: false
 category: personal
-priority: 1
+priority: 200
 links: [
     {
         desc: "spaceappschallenge.org",

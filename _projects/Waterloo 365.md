@@ -10,7 +10,7 @@ tags: [symvaro, ios, android]
 features: [Push Notifications, Networking, QR reader, Local storage, OCR meter reading, Reminders]
 comments: false
 category: work
-priority: 10
+priority: 410
 links: [
     {
         src: "/assets/images/appstore.png",

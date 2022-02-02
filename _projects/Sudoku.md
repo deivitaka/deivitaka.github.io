@@ -7,7 +7,7 @@ bigimg: /assets/images/projects/sudoku-solver-b.jpg
 tags: [windows, C#]
 comments: false
 category: personal
-priority: 5
+priority: 102
 gallery_dir: "/assets/images/projects/sudoku-solver/"
 links: [
     {

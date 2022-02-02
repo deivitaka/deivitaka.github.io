@@ -10,7 +10,7 @@ gallery_dir: "/assets/images/projects/epa/"
 tags: [messenger, easypay]
 comments: false
 category: work
-priority: 7
+priority: 301
 ---
 
 {% include project-item.html page=page %}

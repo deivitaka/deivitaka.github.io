@@ -11,7 +11,7 @@ tags: [easypay, ios, android]
 features: [Networking, QR reader, Local storage]
 comments: false
 category: work
-priority: 10
+priority: 404
 links: [
     {
         desc: "Privately distributed"
